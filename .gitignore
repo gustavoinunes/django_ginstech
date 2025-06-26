@@ -1,0 +1,28 @@
+git status
+# Python
+*.pyc
+__pycache__/
+
+# Virtualenv
+venv/
+env/
+plugins/
+
+# Django
+*.sqlite3
+*.log
+staticfiles/
+media/
+
+# Configs locais
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+
+# Renderizador PDF
+wkhtmltopdf.exe

@@ -1,0 +1,12 @@
+.container {
+    font-family: "Red Hat Display", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+input:focus, textarea:focus, .form-control:focus {
+    border-color: #82847b !important;
+    outline: none; 
+    box-shadow: 0 0 1px #82847b;
+}

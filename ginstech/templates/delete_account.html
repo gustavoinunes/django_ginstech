@@ -1,0 +1,14 @@
+{% extends 'navigation.html' %}
+
+{% block main %}
+<div class="text-center mt-4 mb-4">
+    <h2 class="text-muted">Editar Perfil</h2>
+</div>
+<div class="col-md-6 offset-md-3 mb-4">
+    <form action="{% url 'delete_account' %}" method="POST">
+        {% csrf_token %}
+        <span>Deseja mesmo deletar conta?</span><br>
+        <button type="submit" class="btn btn-secondary mb-3">Salvar</button>
+    </form>
+</div>
+{% endblock main %}

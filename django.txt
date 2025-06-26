@@ -1,0 +1,48 @@
+==============================
+CAMINHOS
+==============================
+
+django:		/var/django/
+nginx:		/etc/nginx/conf.d/sohome.conf
+imagens:	/mnt/imagens/
+wkhtmltopdf:	/usr/local/bin/
+
+==============================
+COMANDOS
+==============================
+
+python3 -m venv venv
+source venv/bin/activate
+
+pip install django
+django-admin startproject nome_do_projeto .
+python manage.py createsuperuser
+python manage.py startapp nome_do_app
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py collectstatic
+python manage.py runserver 0.0.0.0:8000
+
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+pip install gunicorn
+sudo systemctl restart gunicorn
+sudo systemctl restart nginx
+
+git reset --hard
+git pull origin main
+
+oWvV5z/!5|77
+
+python manage.py shell
+from django.contrib.auth.models import User
+user = User.objects.get(username='gustavo.nunes')
+user.is_superuser = False
+user.is_staff = True
+user.save()
+
+from django.contrib.auth.models import User
+user = User.objects.get(username='gustavo.nunes')
+user.delete()

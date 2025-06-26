@@ -1,0 +1,25 @@
+{% extends 'navigation.html' %}
+
+{% load static %}
+
+{% block main %}
+<div class="text-center mt-4 mb-4">
+    <h2>Editar Perfil</h2>
+</div>
+<div class="col-md-6 offset-md-3 mb-4">
+    <form action="{% url 'edit_profile' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <div class="mb-3">
+            {% if user.profile.foto_base64 %}
+            <img style="max-width: 100px;" src="data:image/png;base64,{{ user.profile.foto_base64 }}" alt="Foto do usuário" />
+            {% else %}
+            <img style="max-width: 100px;" src="{% static '/img/usuario.png' %}" alt="Foto do usuário" />
+            {% endif %}
+            <input type="file" name="foto" accept="image/*"/>
+        </div>
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-secondary mb-3">Salvar</button>
+        <p><a href="{% url 'change_password' %}">Alterar senha</a></p>
+        <p><a href="{% url 'delete_account' %}">Deletar conta</a></p>
+    </form>
+</div>
+{% endblock main %}
